@@ -1,0 +1,13 @@
+.nav {
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+}

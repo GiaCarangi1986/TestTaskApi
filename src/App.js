@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import GetDesigner from './pages'
+import { PATHS, PAGE_NAME } from './const'
 
-export default App;
+const App = () => (
+  <Router>
+    <Routes>
+      <Route
+        strict
+        path={PATHS.getPage.path}
+        exact={PATHS.getPage.exact}
+        element={<GetDesigner pageName={PAGE_NAME.getPage} />}
+      />
+      <Route
+        strict
+        path={PATHS.postPage.path}
+        exact={PATHS.postPage.exact}
+        element={<GetDesigner pageName={PAGE_NAME.postPage} />}
+      />
+      <Route
+        strict
+        path={PATHS.deletePage.path}
+        exact={PATHS.deletePage.exact}
+        element={<GetDesigner pageName={PAGE_NAME.deletePage} />}
+      />
+      <Route
+        strict
+        path={PATHS.imagesPage.path}
+        exact={PATHS.imagesPage.exact}
+        element={<GetDesigner pageName={PAGE_NAME.imagesPage} />}
+      />
+    </Routes>
+  </Router>
+)
+
+export default App

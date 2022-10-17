@@ -1,0 +1,19 @@
+.container {
+  margin-top: 20px;
+}
+
+.content {
+  height: calc(60vh - var(--btn-height) - 20px);
+}
+
+.image {
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  max-height: 100px;
+}
+
+.wrap-img {
+  display: flex;
+  gap: 20px;
+}
