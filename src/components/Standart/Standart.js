@@ -3,11 +3,11 @@ import React from 'react';
 import { useGetResponse } from '../../utils';
 import { Container } from '../../views';
 
-const Standart = ({ btnText, apiMethod, ...props }) => {
+const Standart = ({ btnText, apiMethod, url, ...props }) => {
   const { data, error, loading, getResult } = useGetResponse()
 
   const handleClick = () => {
-    getResult(apiMethod)
+    getResult(apiMethod, url)
   }
 
   return (

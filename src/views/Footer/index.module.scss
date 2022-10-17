@@ -1,6 +1,19 @@
 .footer {
-  word-wrap: break-word;
   margin-top: 20px;
   height: calc(29vh - var(--btn-height) - 20px);
   overflow-y: auto;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.name {
+  font-weight: bold;
 }

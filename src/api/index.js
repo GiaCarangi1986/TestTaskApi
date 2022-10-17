@@ -1,43 +1,33 @@
-const PATH = 'https://httpbin.org/'
-
-export const getInfo = async () => {
-  const res = await fetch(`${PATH}/get`, {
+export const getInfo = async (path) => {
+  const res = await fetch(path, {
     method: 'GET',
   })
+
   return await res.json()
 };
 
-export const postInfo = async () => {
-  const res = await fetch(`${PATH}/post`, {
+export const postInfo = async (path) => {
+  const res = await fetch(path, {
     method: 'POST',
   })
+
   return await res.json()
 };
 
-export const deleteInfo = async () => {
-  const res = await fetch(`${PATH}/delete`, {
+export const deleteInfo = async (path) => {
+  const res = await fetch(path, {
     method: 'DELETE',
   })
+
   return await res.json()
 };
 
-export const imageInfo = async () => {
+export const imageInfo = async (path) => {
   const imgs = []
 
-  const arrayPromise = [
-    fetch(`${PATH}/image/png`, {
-      method: 'GET',
-    }),
-    fetch(`${PATH}/image/jpeg`, {
-      method: 'GET',
-    }),
-    fetch(`${PATH}/image/webp`, {
-      method: 'GET',
-    }),
-    fetch(`${PATH}/image`, {
-      method: 'GET',
-    }),
-  ]
+  const arrayPromise = path.map(path => fetch(path, {
+    method: 'GET',
+  }))
 
   const promises = arrayPromise.map(async (res) => {
     const data = await res

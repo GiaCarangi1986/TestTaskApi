@@ -40,3 +40,12 @@ export const CONTENT_TYPE = {
   image: 'image',
   json: 'json'
 }
+
+const BASE_URL = 'https://httpbin.org/'
+
+export const URL_REQUESTS = {
+  get: `${BASE_URL}/get`,
+  post: `${BASE_URL}/post`,
+  delete: `${BASE_URL}/delete`,
+  image: [`${BASE_URL}/image/png`, `${BASE_URL}/image/jpeg`, `${BASE_URL}/image/webp`, `${BASE_URL}/image`]
+}
